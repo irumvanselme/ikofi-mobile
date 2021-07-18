@@ -5,10 +5,11 @@ import { colors } from "./constants/colors";
 import Home from "./screens/Home";
 import LoginScreen from "./screens/auth/Login";
 import RegisterScreen from "./screens/auth/Register";
+import DashboardScreen from "./screens/dashboard/Dashboard";
 
 export default function App() {
     let App;
-    let show = "Register"
+    let show = "Dashboard"
     switch (show) {
         case "Home":
             App = Home;
@@ -18,6 +19,9 @@ export default function App() {
             break;
         case "Register":
             App = RegisterScreen;
+            break;
+        case "Dashboard":
+            App = DashboardScreen;
             break;
     }
     

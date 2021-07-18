@@ -1,9 +1,9 @@
 import React from "react";
 import { StyleSheet, StatusBar, View } from "react-native";
 
-export default function ({ children }){
+export default function ({ children, style={} }){
     return (
-        <View style={styles.container}>
+        <View style={{ ...styles.container, ...style }}>
             {children}
         </View>
     )
@@ -15,6 +15,6 @@ const styles = StyleSheet.create({
         minHeight: "100%",
         display: "flex",
         padding: 10,
-        backgroundColor: "#fafafa"
+        backgroundColor: "#fafafa",
     }
 })
