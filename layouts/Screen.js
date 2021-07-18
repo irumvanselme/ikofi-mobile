@@ -11,9 +11,10 @@ export default function ({ children }){
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: StatusBar.currentHeight,
+        paddingTop: StatusBar.currentHeight,
         minHeight: "100%",
         display: "flex",
-        padding: 10
+        padding: 10,
+        backgroundColor: "#fafafa"
     }
 })
