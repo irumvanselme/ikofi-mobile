@@ -3,7 +3,7 @@ import { Image, View, StyleSheet } from "react-native";
 
 export default function Logo() {
     return (
-        <View>
+        <View style={{alignItems: "center"}}>
             <Image source={require("../../assets/logo.png")} resizeMode="contain" style={styles.image}/>
         </View>
     )

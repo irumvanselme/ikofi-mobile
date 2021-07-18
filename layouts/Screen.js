@@ -14,6 +14,6 @@ const styles = StyleSheet.create({
         marginTop: StatusBar.currentHeight,
         minHeight: "100%",
         display: "flex",
-        alignItems: "center"
+        padding: 10
     }
 })

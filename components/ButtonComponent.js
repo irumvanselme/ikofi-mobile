@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { Text, TouchableNativeFeedback, View, StyleSheet } from "react-native";
 import { colors } from "../constants/colors";
 
-export default function ButtonComponent({ children }) {
+export default function ButtonComponent({ children, style = {} }) {
     return (
         <View style={styles.container}>
-            <TouchableNativeFeedback>
-                <View style={styles.touchable}>
+            <TouchableNativeFeedback background={TouchableNativeFeedback.Ripple("white", false)} style={style}>
+                <View style={{...styles.touchable, ...style}}>
                     <Text style={styles.text}>{children}</Text>
                 </View>
             </TouchableNativeFeedback>
@@ -16,7 +16,7 @@ export default function ButtonComponent({ children }) {
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 30
+        marginVertical: 30
     },
     touchable: {
         backgroundColor: colors.primary,

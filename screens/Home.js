@@ -9,14 +9,16 @@ export default function () {
     return (
         <Screen>
             <View style={styles.container}>
-                <Logo/>
-                <View  style={styles.texts}>
-                    <Text style={styles.header}>IKOFI</Text>
-                    <Text style={styles.header}>Welcome back !</Text>
-                    <Text style={styles.slogan}>Send Money without tears</Text>
-                </View>
                 <View>
-                    <ButtonComponent>Click me</ButtonComponent>
+                    <Logo/>
+                    <View  style={styles.texts}>
+                        <Text style={{ ...styles.header, color: colors.primary, fontSize: 40 }}>IKOFI</Text>
+                        <Text style={styles.header}>Welcome back !</Text>
+                        <Text style={styles.slogan}>Send Money without tears</Text>
+                    </View>
+                </View>
+                <View style={styles.buttonContainer}>
+                    <ButtonComponent style={{borderRadius: 40, elevation: 0}}>get started</ButtonComponent>
                 </View>
             </View>
         </Screen>
@@ -26,8 +28,8 @@ export default function () {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: "center",
-        marginTop: 100
+        display: "flex",
+        justifyContent: "space-evenly",
     },
     texts: {
         marginTop: 50
@@ -39,7 +41,11 @@ const styles = StyleSheet.create({
     },
     slogan: {
         textAlign: "center",
-        marginTop: 30,
+        marginTop: 20,
         color: colors.primary
+    },
+    buttonContainer: {
+        width: "100%",
+        paddingHorizontal: 40
     }
 })
