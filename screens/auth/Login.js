@@ -1,6 +1,5 @@
 import React from "react";
-import { Text, View } from "react-native";
-import Screen from "../../layouts/Screen";
+
 import AuthScreenLayout from "../../layouts/AuthScreen";
 import FormControl from "../../components/FormControl";
 import ButtonComponent from "../../components/ButtonComponent";
