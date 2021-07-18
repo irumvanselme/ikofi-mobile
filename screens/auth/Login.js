@@ -6,7 +6,7 @@ import ButtonComponent from "../../components/ButtonComponent";
 
 export default function LoginScreen() {
     return (
-        <AuthScreenLayout title="Log in into Ikofi">
+        <AuthScreenLayout title="Log in into Ikofi" linkText="Don't have an account">
             <FormControl label="Email, username or Mobile" placeholder="Email, username, phone"/>
             <FormControl label="Password" placeholder="password" password/>
             <ButtonComponent>Log in</ButtonComponent>

@@ -28,8 +28,10 @@ export default function () {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        height: "100%",
         display: "flex",
         justifyContent: "space-evenly",
+        backgroundColor: "red"
     },
     texts: {
         marginTop: 50

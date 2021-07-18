@@ -4,7 +4,7 @@ import Screen from "./Screen";
 import { MaterialIcons } from '@expo/vector-icons';
 import { colors } from "../constants/colors";
 
-export default function AuthScreenLayout({ children, title }){
+export default function AuthScreenLayout({ children, title, linkText }){
     return (
         <Screen>
             <MaterialIcons name="navigate-before" size={40} color="black" />
@@ -13,6 +13,9 @@ export default function AuthScreenLayout({ children, title }){
                 <View style={{margin: 20}}>
                     {children}
                 </View>
+            </View>
+            <View>
+                <Text style={styles.linkText}>{linkText}</Text>
             </View>
         </Screen>
     )
@@ -27,5 +30,10 @@ const styles = StyleSheet.create({
         fontWeight: "700",
         color: colors.primary,
         textAlign: "center"
+    },
+    linkText: {
+        color: colors.primary,
+        textAlign: "center",
+        fontSize: 16
     }
 })
