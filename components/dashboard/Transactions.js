@@ -3,7 +3,23 @@ import { StyleSheet, Text, View } from "react-native";
 import Transaction from "./Transaction";
 
 export default function Transactions() {
-	const transactions = ["Transaction One"];
+	const transactions = [
+		"Transaction One",
+		"Transaction One",
+		"Transaction One",
+		"Transaction One",
+		"Transaction One",
+		"Transaction One",
+		"Transaction One",
+		"Transaction One",
+		"Transaction One",
+		"Transaction One",
+		"Transaction One",
+		"Transaction One",
+		"Transaction One",
+		"Transaction One",
+		"Transaction One",
+	];
 
 	return (
 		<View>

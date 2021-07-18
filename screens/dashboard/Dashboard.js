@@ -6,46 +6,51 @@ import { LinearGradient } from "expo-linear-gradient";
 import Screen from "../../layouts/Screen";
 import { colors } from "../../constants/colors";
 import Transactions from "../../components/dashboard/Transactions";
+import { ScrollView } from "react-native";
 
 export default function DashboardScreen() {
 	return (
-		<Screen style={styles.container}>
-			<View style={styles.page}>
-				<View style={styles.details}>
-					<Text style={styles.greetings}>Good evening Anselme !</Text>
-					<Text style={styles.greetings}>Welcome Back</Text>
-				</View>
-				<View style={styles.transactions}>
-					<LinearGradient
-						colors={[colors.primary, "#A46DFF"]}
-						start={{ x: 0, y: 0.5 }}
-						end={{ x: 1, y: 0 }}
-						style={styles.balance}
-					>
-						<View style={{ marginTop: 17 }}>
-							<Text style={{ fontSize: 18, color: "white" }}>
-								3253
-							</Text>
+		<ScrollView>
+			<Screen style={styles.container}>
+				<View style={styles.page}>
+					<View style={styles.details}>
+						<Text style={styles.greetings}>
+							Good evening Anselme !
+						</Text>
+						<Text style={styles.greetings}>Welcome Back</Text>
+					</View>
+					<View style={styles.transactions}>
+						<LinearGradient
+							colors={[colors.primary, "#A46DFF"]}
+							start={{ x: 0, y: 0.5 }}
+							end={{ x: 1, y: 0 }}
+							style={styles.balance}
+						>
+							<View style={{ marginTop: 17 }}>
+								<Text style={{ fontSize: 18, color: "white" }}>
+									3253
+								</Text>
+							</View>
+							<View>
+								<Text style={styles.cardMoney}>4000</Text>
+								<Text
+									style={{
+										textAlign: "right",
+										marginTop: 10,
+										color: "lightgray",
+									}}
+								>
+									Your Balance
+								</Text>
+							</View>
+						</LinearGradient>
+						<View style={styles.transactionContainer}>
+							<Transactions />
 						</View>
-						<View>
-							<Text style={styles.cardMoney}>4000</Text>
-							<Text
-								style={{
-									textAlign: "right",
-									marginTop: 10,
-									color: "lightgray",
-								}}
-							>
-								Your Balance
-							</Text>
-						</View>
-					</LinearGradient>
-					<View style={styles.transactionContainer}>
-						<Transactions />
 					</View>
 				</View>
-			</View>
-		</Screen>
+			</Screen>
+		</ScrollView>
 	);
 }
 
@@ -65,7 +70,7 @@ const styles = StyleSheet.create({
 		display: "flex",
 		justifyContent: "flex-end",
 		padding: 20,
-		paddingBottom: 90,
+		paddingVertical: 90,
 	},
 	transactions: {
 		flex: 5,
