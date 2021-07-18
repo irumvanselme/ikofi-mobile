@@ -1,11 +1,15 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { StyleSheet, Text, ImageBackground, View, Image } from "react-native";
 import Screen from "../layouts/Screen";
+import { colors } from "../constants/colors";
 
-export default function (){
+export default function () {
     return (
         <Screen>
-            <Text>Holla I am the entry point</Text>
+            <Image source={require("../assets/logo.png")} resizeMode="contain" style={{ backgroundColor: "red"}}/>
+            <Text>Holla I am anselme</Text>
         </Screen>
     )
 }
+
+const styles = StyleSheet.create({})

@@ -11,8 +11,9 @@ export default function ({ children }){
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "red",
         marginTop: StatusBar.currentHeight,
-        minHeight: "100%"
+        minHeight: "100%",
+        display: "flex",
+        alignItems: "center"
     }
 })
