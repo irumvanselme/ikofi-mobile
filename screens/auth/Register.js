@@ -1,12 +1,17 @@
 import React from "react";
-import { Text, View } from "react-native";
 
-export default function RegisterScreen(){
+import FormControl from "../../components/FormControl";
+import ButtonComponent from "../../components/ButtonComponent";
+import AuthScreenLayout from "../../layouts/AuthScreen";
+
+export default function RegisterScreen() {
     return (
-        <View>
-            <Text>
-                I am the register screen
-            </Text>
-        </View>
+        <AuthScreenLayout title="Register into Ikofi">
+            <FormControl label="Full names" placeholder="eg: John Doe"/>
+            <FormControl label="Email" placeholder="eg: john@ikofi.rw"/>
+            <FormControl label="Username" placeholder="eg: john"/>
+            <FormControl label="Password" placeholder="password" password/>
+            <ButtonComponent>register</ButtonComponent>
+        </AuthScreenLayout>
     )
 }

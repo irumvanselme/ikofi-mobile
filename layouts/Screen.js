@@ -1,11 +1,11 @@
 import React from "react";
-import { StyleSheet, View, StatusBar } from "react-native";
+import { StyleSheet, StatusBar, ScrollView } from "react-native";
 
 export default function ({ children }){
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             {children}
-        </View>
+        </ScrollView>
     )
 }
 

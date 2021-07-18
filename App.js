@@ -4,16 +4,20 @@ import { StyleSheet, Text, View } from 'react-native';
 import { colors } from "./constants/colors";
 import Home from "./screens/Home";
 import LoginScreen from "./screens/auth/Login";
+import RegisterScreen from "./screens/auth/Register";
 
 export default function App() {
     let App;
-    let show = "Login"
+    let show = "Register"
     switch (show) {
         case "Home":
             App = Home;
             break;
         case "Login":
             App = LoginScreen;
+            break;
+        case "Register":
+            App = RegisterScreen;
             break;
     }
     

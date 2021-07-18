@@ -20,7 +20,7 @@ export default function AuthScreenLayout({ children, title }){
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 100
+        marginTop: 50
     },
     header: {
         fontSize: 30,
