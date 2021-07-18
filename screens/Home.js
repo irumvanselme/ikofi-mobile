@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import Screen from "../layouts/Screen";
 import Logo from "../components/logo/Logo";
 import { colors } from "../constants/colors";
+import ButtonComponent from "../components/ButtonComponent";
 
 export default function () {
     return (
@@ -15,7 +16,7 @@ export default function () {
                     <Text style={styles.slogan}>Send Money without tears</Text>
                 </View>
                 <View>
-                
+                    <ButtonComponent>Click me</ButtonComponent>
                 </View>
             </View>
         </Screen>
