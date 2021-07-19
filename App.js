@@ -9,10 +9,11 @@ import DashboardScreen from "./screens/dashboard/Dashboard";
 import ProfileScreen from "./screens/auth/Profile";
 import LearningScreen from "./screens/Learn";
 import AuthNavigation from "./navigation/AuthNavigation";
+import AppNavigator from "./navigation/AppNavigator";
 
 export default function App() {
 	let App;
-	let show = "Learning";
+	let show = "App";
 	switch (show) {
 		case "Auth":
 			App = AuthNavigation;
@@ -25,6 +26,9 @@ export default function App() {
 			break;
 		case "Learning":
 			App = LearningScreen;
+			break;
+		case "App":
+			App = AppNavigator;
 			break;
 	}
 
