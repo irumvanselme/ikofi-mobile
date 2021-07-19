@@ -1,9 +1,12 @@
 import React from "react";
+
 import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
+
 import Home from "../screens/Home";
 import LoginScreen from "../screens/auth/Login";
 import RegisterScreen from "../screens/auth/Register";
+import navigationTheme from "./navigationTheme";
 
 const Stack = createStackNavigator();
 
@@ -17,7 +20,7 @@ const StackNavigator = () => (
 
 export default function AuthNavigation() {
 	return (
-		<NavigationContainer>
+		<NavigationContainer theme={navigationTheme}>
 			<StackNavigator />
 		</NavigationContainer>
 	);

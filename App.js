@@ -12,7 +12,7 @@ import AuthNavigation from "./navigation/AuthNavigation";
 
 export default function App() {
 	let App;
-	let show = "Auth";
+	let show = "Learning";
 	switch (show) {
 		case "Auth":
 			App = AuthNavigation;
