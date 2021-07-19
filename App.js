@@ -8,19 +8,14 @@ import RegisterScreen from "./screens/auth/Register";
 import DashboardScreen from "./screens/dashboard/Dashboard";
 import ProfileScreen from "./screens/auth/Profile";
 import LearningScreen from "./screens/Learn";
+import AuthNavigation from "./navigation/AuthNavigation";
 
 export default function App() {
 	let App;
-	let show = "Learning";
+	let show = "Auth";
 	switch (show) {
-		case "Home":
-			App = Home;
-			break;
-		case "Login":
-			App = LoginScreen;
-			break;
-		case "Register":
-			App = RegisterScreen;
+		case "Auth":
+			App = AuthNavigation;
 			break;
 		case "Dashboard":
 			App = DashboardScreen;
