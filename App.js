@@ -7,10 +7,11 @@ import LoginScreen from "./screens/auth/Login";
 import RegisterScreen from "./screens/auth/Register";
 import DashboardScreen from "./screens/dashboard/Dashboard";
 import ProfileScreen from "./screens/auth/Profile";
+import LearningScreen from "./screens/Learn";
 
 export default function App() {
 	let App;
-	let show = "Profile";
+	let show = "Learning";
 	switch (show) {
 		case "Home":
 			App = Home;
@@ -26,6 +27,9 @@ export default function App() {
 			break;
 		case "Profile":
 			App = ProfileScreen;
+			break;
+		case "Learning":
+			App = LearningScreen;
 			break;
 	}
 
