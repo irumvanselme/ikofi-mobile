@@ -16,7 +16,6 @@ export default function FormControl({
 	label,
 	password = false,
 }) {
-	const [isPassword, setIsPassword] = useState(password);
 	const [showPassword, setShowPassword] = useState(false);
 
 	const handleShowPassword = () => {
@@ -31,7 +30,7 @@ export default function FormControl({
 					<TextInput
 						placeholder={placeholder}
 						style={styles.input}
-						secureTextEntry={isPassword && showPassword}
+						secureTextEntry={password && !showPassword}
 					/>
 				</View>
 				{password && (
@@ -39,7 +38,7 @@ export default function FormControl({
 						style={styles.button}
 						onPress={handleShowPassword}
 					>
-						{showPassword ? (
+						{!showPassword ? (
 							<Ionicons
 								name="eye-off-outline"
 								size={24}
@@ -70,11 +69,11 @@ const styles = StyleSheet.create({
 		backgroundColor: colors.pureWhite,
 		overflow: "hidden",
 		paddingHorizontal: 15,
-		paddingVertical: 8,
+		paddingVertical: 5,
 	},
 	label: {
 		marginBottom: 5,
-		marginTop: 25,
+		marginTop: 18,
 	},
 	input: {
 		fontSize: 16,

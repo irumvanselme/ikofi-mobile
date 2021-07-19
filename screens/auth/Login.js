@@ -15,7 +15,7 @@ export default function LoginScreen() {
 				label="Email, username or Mobile"
 				placeholder="Email, username, phone"
 			/>
-			<FormControl label="Password" placeholder="password" password />
+			<FormControl label="Password" placeholder="Password" password />
 			<ButtonComponent>Log in</ButtonComponent>
 		</AuthScreenLayout>
 	);

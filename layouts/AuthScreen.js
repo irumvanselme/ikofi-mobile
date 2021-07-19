@@ -23,7 +23,7 @@ export default function AuthScreenLayout({
 	};
 
 	return (
-		<Screen>
+		<Screen style={{ padding: 0 }}>
 			<MaterialIcons
 				name="navigate-before"
 				size={40}
@@ -45,7 +45,7 @@ export default function AuthScreenLayout({
 
 const styles = StyleSheet.create({
 	container: {
-		marginTop: 50,
+		marginTop: 30,
 	},
 	header: {
 		fontSize: 30,

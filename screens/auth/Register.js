@@ -17,7 +17,7 @@ export default function RegisterScreen() {
 				<FormControl label="Full names" placeholder="eg: John Doe" />
 				<FormControl label="Email" placeholder="eg: john@ikofi.rw" />
 				<FormControl label="Username" placeholder="eg: john" />
-				<FormControl label="Password" placeholder="password" password />
+				<FormControl label="Password" placeholder="Password" password />
 				<ButtonComponent>register</ButtonComponent>
 			</AuthScreenLayout>
 		</ScrollView>
