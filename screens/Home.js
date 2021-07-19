@@ -7,7 +7,6 @@ import ButtonComponent from "../components/ButtonComponent";
 
 export default function ({ navigation }) {
 	const goToRegister = () => {
-		console.log("The button is clicked");
 		navigation.navigate("Register");
 	};
 
