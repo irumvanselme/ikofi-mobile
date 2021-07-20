@@ -1,36 +1,31 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { colors } from "./constants/colors";
-import Home from "./screens/Home";
-import LoginScreen from "./screens/auth/Login";
-import RegisterScreen from "./screens/auth/Register";
-import DashboardScreen from "./screens/dashboard/Dashboard";
-import ProfileScreen from "./screens/auth/Profile";
-import LearningScreen from "./screens/Learn";
 import AuthNavigation from "./navigation/AuthNavigation";
 import AppNavigator from "./navigation/AppNavigator";
+import { AuthController } from "./utils/AuthController";
+import LoadingScreen from "./screens/Loading";
 
 export default function App() {
-	let App;
-	let show = "App";
-	switch (show) {
-		case "Auth":
-			App = AuthNavigation;
-			break;
-		case "Dashboard":
-			App = DashboardScreen;
-			break;
-		case "Profile":
-			App = ProfileScreen;
-			break;
-		case "Learning":
-			App = LearningScreen;
-			break;
-		case "App":
-			App = AppNavigator;
-			break;
-	}
+	let App = LoadingScreen;
+
+	// const [show, setShow] = useState("Auth");
+
+	// useEffect(() => {
+	// 	if (AuthController.isLoggedIn()) {
+	// 		setShow("App");
+	// 	}
+	// }, []);
+
+	// switch (show) {
+	// 	case "Auth":
+	// 		App = AuthNavigation;
+	// 		break;
+	// 	case "App":
+	// 		App = AppNavigator;
+	// 		break;
+	// }
 
 	return (
 		<View style={styles.container}>
