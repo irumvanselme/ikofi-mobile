@@ -7,6 +7,8 @@ import AuthScreenLayout from "../../layouts/AuthScreen";
 import FormControl from "../../components/FormControl";
 import ButtonComponent from "../../components/ButtonComponent";
 import { AuthService } from "../../services/AuthService";
+import { Alert } from "react-native";
+import { AuthController } from "../../utils/AuthController";
 
 export default function LoginScreen() {
 	const [login, setLogin] = useState("");
@@ -34,10 +36,10 @@ export default function LoginScreen() {
 				password: [],
 			});
 
-			let { data } = await AuthService.register(login);
-			console.log(data);
+			let { data } = await AuthService.login(valid.input);
+			AuthController.storeToken(data.data.token);
 		} catch (error) {
-			console.log(error.response.data);
+			Alert.alert(error.response.data.message);
 		}
 	};
 

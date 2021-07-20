@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const url = "http://locahost:8080";
+export const url = "http://192.168.8.106:8080/api";
 
 export class Service {
 	static http = axios.create({
