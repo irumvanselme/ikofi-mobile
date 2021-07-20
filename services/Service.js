@@ -3,23 +3,23 @@ import axios from "axios";
 export const url = "http://locahost:8080";
 
 export class Service {
-	http = axios.create({
+	static http = axios.create({
 		baseURL: url,
 	});
 
-	get(url) {
+	static get(url) {
 		return this.http.get(url);
 	}
 
-	post(url, body) {
+	static post(url, body) {
 		return this.http.post(url, body);
 	}
 
-	put(url, body) {
-		return this.http.put(url);
+	static put(url, body) {
+		return this.http.put(url, body);
 	}
 
-	delete(url) {
+	static delete(url) {
 		return this.http.delete(url);
 	}
 }
