@@ -15,6 +15,8 @@ export default function FormControl({
 	placeholder = "",
 	label,
 	password = false,
+	errors = [],
+	handler = (data) => null,
 }) {
 	const [showPassword, setShowPassword] = useState(false);
 
@@ -22,15 +24,25 @@ export default function FormControl({
 		setShowPassword(!showPassword);
 	};
 
+	const handleChange = (value) => {
+		handler(value);
+	};
+
 	return (
 		<View>
 			{label && <Label label={label} />}
-			<View style={styles.container}>
+			<View
+				style={{
+					...styles.container,
+					borderColor: errors.length == 0 ? "#cdcdcd" : "red",
+				}}
+			>
 				<View style={{ flexGrow: 1, width: "90%", marginRight: 10 }}>
 					<TextInput
 						placeholder={placeholder}
 						style={styles.input}
 						secureTextEntry={password && !showPassword}
+						onChangeText={handleChange}
 					/>
 				</View>
 				{password && (
@@ -54,6 +66,9 @@ export default function FormControl({
 					</TouchableOpacity>
 				)}
 			</View>
+			{errors.length > 0 && (
+				<Text style={styles.errorMessage}>{errors[0]}</Text>
+			)}
 		</View>
 	);
 }
@@ -79,4 +94,8 @@ const styles = StyleSheet.create({
 		fontSize: 16,
 	},
 	button: {},
+	errorMessage: {
+		color: "red",
+		marginTop: 4,
+	},
 });
