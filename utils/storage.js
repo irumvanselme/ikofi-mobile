@@ -6,18 +6,26 @@ export default class Entity {
 	}
 
 	async store(value) {
-		await SecureStorage.setItemAsync(this.key, value);
+		try {
+			await SecureStorage.setItemAsync(this.key, value);
+		} catch (error) {
+			console.log("Failed to store the value ");
+		}
 	}
 
 	async get() {
-		return await SecureStorage.getItemAsync(this.key);
-	}
-
-	async isAvailable() {
-		return await SecureStorage.isAvailableAsync(this.key);
+		try {
+			return await SecureStorage.getItemAsync(this.key);
+		} catch (error) {
+			console.log("Failed to retrieve the item you requested");
+		}
 	}
 
 	async remove() {
-		return await SecureStorage.deleteItemAsync(this.key);
+		try {
+			return await SecureStorage.deleteItemAsync(this.key);
+		} catch (error) {
+			console.log("Failed to remove the item");
+		}
 	}
 }
