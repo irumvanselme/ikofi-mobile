@@ -7,6 +7,8 @@ import ButtonComponent from "../../components/ButtonComponent";
 
 import { colors } from "../../constants/colors";
 import { TouchableOpacity } from "react-native";
+import { ScrollView } from "react-native";
+import { AuthController } from "../../utils/AuthController";
 
 export default function ProfileScreen() {
 	const user = {
@@ -16,47 +18,58 @@ export default function ProfileScreen() {
 		email: "andesanselme@gmail.com",
 	};
 
+	const logOut = async () => {
+		await AuthController.logOut();
+	};
+
 	return (
-		<Screen style={styles.page}>
-			<View style={styles.basicProfile}>
-				<View style={styles.imageContainer}>
-					<Image
-						source={require("../../assets/profile.jpeg")}
-						style={styles.profilePic}
-					/>
-				</View>
-				<Text style={styles.name}>{user.full_names}</Text>
-			</View>
-			<View style={styles.details}>
-				<View style={styles.card}>
-					<Text style={styles.cardTitle}>Profile Details</Text>
-					<View style={styles.cardTableRow}>
-						<Text style={styles.rowAttribute}>username</Text>
-						<Text style={styles.rowValue}>{user.username}</Text>
+		<ScrollView>
+			<Screen style={styles.page}>
+				<View style={styles.basicProfile}>
+					<View style={styles.imageContainer}>
+						<Image
+							source={require("../../assets/profile.jpeg")}
+							style={styles.profilePic}
+						/>
 					</View>
-					<View style={styles.cardTableRow}>
-						<Text style={styles.rowAttribute}>Mobile</Text>
-						<Text style={styles.rowValue}>{user.mobile}</Text>
+					<Text style={styles.name}>{user.full_names}</Text>
+				</View>
+				<View style={styles.details}>
+					<View style={styles.card}>
+						<Text style={styles.cardTitle}>Profile Details</Text>
+						<View style={styles.cardTableRow}>
+							<Text style={styles.rowAttribute}>username</Text>
+							<Text style={styles.rowValue}>{user.username}</Text>
+						</View>
+						<View style={styles.cardTableRow}>
+							<Text style={styles.rowAttribute}>Mobile</Text>
+							<Text style={styles.rowValue}>{user.mobile}</Text>
+						</View>
+						<View style={styles.cardTableRow}>
+							<Text style={styles.rowAttribute}>email</Text>
+							<Text style={styles.rowValue}>{user.email}</Text>
+						</View>
 					</View>
-					<View style={styles.cardTableRow}>
-						<Text style={styles.rowAttribute}>email</Text>
-						<Text style={styles.rowValue}>{user.email}</Text>
+					<View style={styles.card}>
+						<Text style={styles.cardTitle}>Profile Settings</Text>
+						<TouchableOpacity style={styles.cardClickable}>
+							<Text>Edit Profile </Text>
+						</TouchableOpacity>
+						<TouchableOpacity style={styles.cardClickable}>
+							<Text>Change password</Text>
+						</TouchableOpacity>
+						<TouchableOpacity style={styles.cardClickable}>
+							<Text>Change PIN</Text>
+						</TouchableOpacity>
 					</View>
 				</View>
-				<View style={styles.card}>
-					<Text style={styles.cardTitle}>Profile Settings</Text>
-					<TouchableOpacity style={styles.cardClickable}>
-						<Text>Edit Profile </Text>
-					</TouchableOpacity>
-					<TouchableOpacity style={styles.cardClickable}>
-						<Text>Change password</Text>
-					</TouchableOpacity>
-					<TouchableOpacity style={styles.cardClickable}>
-						<Text>Change PIN</Text>
-					</TouchableOpacity>
+				<View
+					style={{ backgroundColor: colors.pureWhite, padding: 20 }}
+				>
+					<ButtonComponent onClick={logOut}>Log out</ButtonComponent>
 				</View>
-			</View>
-		</Screen>
+			</Screen>
+		</ScrollView>
 	);
 }
 

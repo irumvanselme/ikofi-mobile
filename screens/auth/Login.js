@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import Validator, { setMessages } from "validatorjs";
-import en from "validatorjs/src/lang/en";
-Validator.setMessages("en", en);
 
 import AuthScreenLayout from "../../layouts/AuthScreen";
 import FormControl from "../../components/FormControl";
@@ -9,6 +6,7 @@ import ButtonComponent from "../../components/ButtonComponent";
 import { AuthService } from "../../services/AuthService";
 import { Alert } from "react-native";
 import { AuthController } from "../../utils/AuthController";
+import Validator from "../../utils/validator";
 
 export default function LoginScreen() {
 	const [login, setLogin] = useState("");
