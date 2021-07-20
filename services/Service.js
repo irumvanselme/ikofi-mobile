@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const url = "http://locahost:8080";
 
-class Service {
+export class Service {
 	http = axios.create({
 		baseURL: url,
 	});
